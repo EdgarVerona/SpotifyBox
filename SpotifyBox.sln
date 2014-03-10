@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpotifyBox.Engine", "SpotifyBox.Engine\SpotifyBox.Engine.csproj", "{A89677BF-64F9-47C9-9DB3-C06CB1BBF360}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpotifyBox.Console", "SpotifyBox.Console\SpotifyBox.Console.csproj", "{57BD5D67-E042-4D90-805C-2A8A88AAAAC2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{A89677BF-64F9-47C9-9DB3-C06CB1BBF360}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A89677BF-64F9-47C9-9DB3-C06CB1BBF360}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A89677BF-64F9-47C9-9DB3-C06CB1BBF360}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57BD5D67-E042-4D90-805C-2A8A88AAAAC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57BD5D67-E042-4D90-805C-2A8A88AAAAC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57BD5D67-E042-4D90-805C-2A8A88AAAAC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57BD5D67-E042-4D90-805C-2A8A88AAAAC2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

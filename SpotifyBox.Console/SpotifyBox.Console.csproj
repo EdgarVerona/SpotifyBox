@@ -4,15 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A89677BF-64F9-47C9-9DB3-C06CB1BBF360}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{57BD5D67-E042-4D90-805C-2A8A88AAAAC2}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SpotifyBox.Engine</RootNamespace>
-    <AssemblyName>SpotifyBox.Engine</AssemblyName>
+    <RootNamespace>SpotifyBox.Console</RootNamespace>
+    <AssemblyName>SpotifyBox.Console</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +23,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -30,9 +32,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="libspotifydotnet">
-      <HintPath>..\..\..\dev\libspotify-net\libspotifydotnet.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -42,20 +41,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Jamcast\Album.cs" />
-    <Compile Include="Jamcast\Artist.cs" />
-    <Compile Include="Jamcast\Functions.cs" />
-    <Compile Include="Jamcast\Image.cs" />
-    <Compile Include="Jamcast\Playlist.cs" />
-    <Compile Include="Jamcast\PlaylistContainer.cs" />
-    <Compile Include="Jamcast\Session.cs" />
-    <Compile Include="Jamcast\Spotify.cs" />
-    <Compile Include="Jamcast\TopList.cs" />
-    <Compile Include="Jamcast\Track.cs" />
-    <Compile Include="Jamcast\User.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SpotifyBox.Engine\SpotifyBox.Engine.csproj">
+      <Project>{a89677bf-64f9-47c9-9db3-c06cb1bbf360}</Project>
+      <Name>SpotifyBox.Engine</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy $(SolutionDir)lib\*.* $(TargetDir)</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
